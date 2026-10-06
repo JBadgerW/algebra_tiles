@@ -1,0 +1,23 @@
+[
+  {
+    "id": "one-step-equations",
+    "title": "One-Step Equations",
+    "count": 16,
+    "description": "Match each equation with its solution.",
+    "order": 1
+  },
+  {
+    "id": "simplify-expressions",
+    "title": "Simplifying Expressions",
+    "count": 14,
+    "description": "Combine like terms and use the distributive property.",
+    "order": 2
+  },
+  {
+    "id": "algebra-vocabulary",
+    "title": "Algebra Vocabulary",
+    "count": 12,
+    "description": "Match each word with its meaning.",
+    "order": 3
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "title": "Algebra Vocabulary",
+  "description": "Match each word with its meaning.",
+  "order": 3,
+  "roundSize": 5,
+  "pairs": [
+    { "q": "Variable", "a": "A letter that stands for an unknown number" },
+    { "q": "Coefficient", "a": "The number multiplied by a variable, like the 4 in $4x$" },
+    { "q": "Constant", "a": "A term with no variable, whose value never changes" },
+    { "q": "Like terms", "a": "Terms with the same variables raised to the same powers" },
+    { "q": "Expression", "a": "Numbers, variables and operations with *no* equals sign" },
+    { "q": "Equation", "a": "A statement that two expressions are equal" },
+    { "q": "Solution", "a": "A value that makes an equation true" },
+    { "q": "Inverse operations", "a": "Operations that undo each other, like adding and subtracting" },
+    { "q": "Distributive property", "a": "$a(b + c) = ab + ac$" },
+    { "q": "Term", "a": "One part of an expression, separated from the others by $+$ or $-$" },
+    { "q": "Exponent", "a": "How many times a base is used as a factor" },
+    { "q": "Inequality", "a": "A statement using $<$, $>$, $\\le$ or $\\ge$" }
+  ]
+}
