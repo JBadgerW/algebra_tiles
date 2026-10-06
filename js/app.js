@@ -75,7 +75,7 @@ function bankCard(b) {
 
 async function showMenu() {
   document.title = TITLE;
-  const banks = await loadIndex();
+  const banks = (await loadIndex()).filter(b => b.visible !== false);
   show(el('main', { class: 'screen menu' },
     el('header', { class: 'menu-head' },
       el('div', {},

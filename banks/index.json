@@ -4,48 +4,55 @@
     "title": "One-Step Equations",
     "count": 16,
     "description": "Match each equation with its solution.",
-    "order": 1
+    "order": 1,
+    "visible": false
   },
   {
     "id": "simplify-expressions",
     "title": "Simplifying Expressions",
     "count": 14,
     "description": "Combine like terms and use the distributive property.",
-    "order": 2
+    "order": 2,
+    "visible": false
   },
   {
     "id": "algebra-vocabulary",
     "title": "Algebra Vocabulary",
     "count": 12,
     "description": "Match each word with its meaning.",
-    "order": 3
+    "order": 3,
+    "visible": false
   },
   {
     "id": "iliad-achaians",
     "title": "The Iliad: Achaians",
     "count": 11,
     "description": "Agamemnon, Achilleus, and the Greek host.",
-    "order": 6.1
+    "order": 6.1,
+    "visible": true
   },
   {
     "id": "iliad-trojans",
     "title": "The Iliad: Trojans",
     "count": 9,
     "description": "Priam’s family, the defenders of Troy, and their allies.",
-    "order": 6.2
+    "order": 6.2,
+    "visible": true
   },
   {
     "id": "iliad-immortals",
     "title": "The Iliad: Immortals",
     "count": 11,
     "description": "The gods who take sides in the war.",
-    "order": 6.3
+    "order": 6.3,
+    "visible": true
   },
   {
     "id": "iliad-characters",
     "title": "The Iliad: Characters",
     "count": 31,
     "description": "The ultimate test: Achaians, Trojans, and immortals together.",
-    "order": 6.4
+    "order": 6.4,
+    "visible": true
   }
 ]

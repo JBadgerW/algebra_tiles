@@ -2,6 +2,7 @@
   "title": "Simplifying Expressions",
   "description": "Combine like terms and use the distributive property.",
   "order": 2,
+  "visible": false,
   "pairs": [
     { "q": "$3x + 5x$", "a": "$8x$" },
     { "q": "$2(x + 4)$", "a": "$2x + 8$" },

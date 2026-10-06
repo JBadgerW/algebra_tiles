@@ -88,7 +88,7 @@ Outside math, `*bold*` and `_italic_` work.
 | `roundSize` | How many pairs per round (default 6, at least 2) |
 | `include` | A list of other bank ids whose pairs this bank also plays, e.g. `["iliad-achaians", "iliad-trojans", "iliad-immortals"]`. Use it for a cumulative test built from slices of the material, so each pair is written only once. A bank can have both its own `pairs` and an `include` |
 | `order` | A number that sets the menu position (lower comes first); otherwise banks are listed alphabetically |
-| `hidden` | `true` leaves the bank off the menu; it still plays from a direct link (`#/play/<id>`) |
+| `visible` | `false` leaves the bank off the menu; it still plays from a direct link (`#/play/<id>`) and can still be `include`d. Set it to `true` (or delete the line) and rerun `build_index.py` to put it back on the menu |
 
 ## Files
 

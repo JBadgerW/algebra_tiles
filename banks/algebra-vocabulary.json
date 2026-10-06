@@ -2,6 +2,7 @@
   "title": "Algebra Vocabulary",
   "description": "Match each word with its meaning.",
   "order": 3,
+  "visible": false,
   "roundSize": 5,
   "pairs": [
     { "q": "Variable", "a": "A letter that stands for an unknown number" },

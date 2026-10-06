@@ -2,6 +2,7 @@
   "title": "One-Step Equations",
   "description": "Match each equation with its solution.",
   "order": 1,
+  "visible": false,
   "pairs": [
     { "q": "$x + 5 = 12$", "a": "$x = 7$" },
     { "q": "$x - 4 = 9$", "a": "$x = 13$" },

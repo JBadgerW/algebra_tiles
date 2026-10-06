@@ -12,8 +12,10 @@ then the rest alphabetically by title.
 A bank can list other banks in "include" (e.g. a cumulative test built
 from its slices); it plays all of their pairs along with any of its own.
 
-Banks with "hidden": true are left off the menu but still play from a
-direct link (#/play/<id>). Remove the line and rerun this to list them.
+Every entry gets "visible", copied from the bank's own "visible" field
+(true unless the bank says false). The menu skips banks with "visible": false,
+but they still play from a direct link (#/play/<id>). To show one again, set
+"visible": true in its bank file and rerun this.
 """
 import json
 import sys
@@ -68,23 +70,22 @@ def entry_for(path, data):
         entry["description"] = data["description"]
     if "order" in data:
         entry["order"] = data["order"]
+    visible = data.get("visible", True)
+    if not isinstance(visible, bool):
+        raise ValueError('"visible" must be true or false')
+    entry["visible"] = visible
     return entry
 
 
 def build():
     entries = []
-    hidden = []
     errors = []
     for path in sorted(BANKS.glob("*.json")):
         if path.name == "index.json":
             continue
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-            entry = entry_for(path, data)  # checks hidden banks too
-            if data.get("hidden"):
-                hidden.append(path.stem)
-            else:
-                entries.append(entry)
+            entries.append(entry_for(path, data))
         except (KeyError, ValueError, TypeError, json.JSONDecodeError) as exc:
             errors.append(f"  {path.name}: {exc}")
 
@@ -92,9 +93,10 @@ def build():
     (BANKS / "index.json").write_text(
         json.dumps(entries, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
-    print(f"Wrote banks/index.json with {len(entries)} bank(s).")
+    hidden = [e["id"] for e in entries if not e["visible"]]
+    print(f"Wrote banks/index.json with {len(entries)} bank(s), {len(entries) - len(hidden)} visible.")
     if hidden:
-        print(f"Hidden from the menu: {', '.join(hidden)}")
+        print(f"Not on the menu (\"visible\": false): {', '.join(hidden)}")
     if errors:
         print("Skipped files with problems:\n" + "\n".join(errors), file=sys.stderr)
         return 1
