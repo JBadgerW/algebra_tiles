@@ -36,6 +36,8 @@ browser uses; `katex.min.css` was trimmed to match.
   pair is served exactly once per game. The last round gets whatever is left. If that would leave a
   single pair (which can't be shuffled), the round before it is dealt one fewer.
 - **Shuffling:** no answer ever starts across from its own question.
+- **Layout:** the side with longer text gets more of the width (e.g. long descriptions beside short
+  names), and no column gets narrower than its longest word.
 - **Moving:** drag an answer onto any part of another row (its question or its answer), and the two
   answers trade places.
 - **Easy / Hard:** chosen on the menu (the browser remembers the choice). In Easy mode a row whose

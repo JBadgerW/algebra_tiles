@@ -19,5 +19,12 @@
     "count": 12,
     "description": "Match each word with its meaning.",
     "order": 3
+  },
+  {
+    "id": "iliad-characters",
+    "title": "The Iliad: Characters",
+    "count": 31,
+    "description": "Achaians, Trojans, and immortals",
+    "order": 6
   }
 ]

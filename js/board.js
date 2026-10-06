@@ -12,22 +12,32 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
 const keyOf = text => text.replace(/\s+/g, ' ').trim();
 
+// Give the side with longer text more of the width, so long descriptions
+// beside one-word answers don't wrap into tall, narrow tiles.
+function columnWidths(pairs) {
+  const avg = side => pairs.reduce((sum, p) => sum + p[side].length, 0) / pairs.length;
+  const ratio = Math.min(2.2, Math.max(1 / 2.2, Math.sqrt(avg('q') / avg('a'))));
+  return `--q-fr: ${ratio.toFixed(2)}fr; --a-fr: 1fr`;
+}
+
 export function createRound({ pairs, easy, onPlace, onSolved }) {
   const n = pairs.length;
   const board = el('div', { class: 'match-board', role: 'list' });
   const live = el('div', { class: 'sr-only', 'aria-live': 'polite' });
-  const wrapper = el('div', { class: 'board-wrap' },
-    el('div', { class: 'match-heads', 'aria-hidden': 'true' },
-      el('span', {}, 'Questions'), el('span'), el('span', {}, 'Answers')),
-    board, live);
+  const wrapper = el('div', { class: 'board-wrap', style: columnWidths(pairs) }, board, live);
+  // Row 1 holds the column headings; pair i sits in grid row i + 2.
+  board.append(
+    el('span', { class: 'match-head', style: 'grid-column: 1', 'aria-hidden': 'true' }, 'Questions'),
+    el('span', { class: 'match-head', style: 'grid-column: 3', 'aria-hidden': 'true' }, 'Answers'),
+  );
 
   // What belongs in each row: the key of that row's answer.
   const expected = pairs.map(p => keyOf(p.a));
   const questions = pairs.map((p, row) => el('div', {
-    class: 'tile question', style: `grid-row: ${row + 1}`,
+    class: 'tile question', style: `grid-row: ${row + 2}`,
   }, el('div', { class: 'tile-body', html: richText(p.q) })));
   const links = pairs.map((_, row) => el('div', {
-    class: 'link', style: `grid-row: ${row + 1}`, 'aria-hidden': 'true',
+    class: 'link', style: `grid-row: ${row + 2}`, 'aria-hidden': 'true',
   }));
 
   // slots[row] is the answer tile currently in that row.
@@ -39,7 +49,7 @@ export function createRound({ pairs, easy, onPlace, onSolved }) {
 
   function layout() {
     slots.forEach((tile, row) => {
-      tile.style.gridRow = String(row + 1);
+      tile.style.gridRow = String(row + 2);
       tile.setAttribute('aria-label', `Answer in row ${row + 1}: ${tile.textContent}`);
     });
   }
