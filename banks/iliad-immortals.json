@@ -1,0 +1,18 @@
+{
+  "title": "The Iliad: Immortals",
+  "description": "The gods who take sides in the war.",
+  "order": 6.3,
+  "pairs": [
+    {"q": "*Immortal.* Son of Kronos, father of gods and men, who grants Thetis' prayer to honor her son.", "a": "Zeus"},
+    {"q": "*Immortal.* Queen of the gods, wife and sister of Zeus, who hates Troy; she lulls her husband to sleep on Ida.", "a": "Hera"},
+    {"q": "*Immortal.* The grey-eyed daughter of Zeus, who grabs Achilleus by the hair to stop him from drawing his sword on Agamemnon.", "a": "Athene"},
+    {"q": "*Immortal.* Phoibos the archer, whose arrows bring the plague; he strikes Patroklos from behind.", "a": "Apollo"},
+    {"q": "*Immortal.* Goddess of love and mother of Aineias; Diomedes wounds her in the hand.", "a": "Aphrodite"},
+    {"q": "*Immortal.* The god of war, who fights for the Trojans; Athene knocks him down with a boundary stone.", "a": "Ares"},
+    {"q": "*Immortal.* The earth-shaker, brother of Zeus and lord of the sea, who rallies the Achaians while Zeus sleeps.", "a": "Poseidon"},
+    {"q": "*Immortal.* A sea-goddess and mother of Achilleus, who asks Zeus to give the Trojans the upper hand.", "a": "Thetis"},
+    {"q": "*Immortal.* Argeïphontes, the guide who escorts Priam through the Achaian camp at night.", "a": "Hermes"},
+    {"q": "*Immortal.* The female messenger of the gods.", "a": "Iris"},
+    {"q": "*Immortal.* The huntress, Apollo's sister; Hera boxes her ears with her own bow.", "a": "Artemis"}
+  ]
+}

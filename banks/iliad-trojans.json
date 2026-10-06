@@ -1,0 +1,16 @@
+{
+  "title": "The Iliad: Trojans",
+  "description": "Priam’s family, the defenders of Troy, and their allies.",
+  "order": 6.2,
+  "pairs": [
+    {"q": "*Trojan.* Eldest son of Priam and Hekabe, husband of Andromache, the chief defender of the city.", "a": "Hektor"},
+    {"q": "*Trojan.* Aged king of Troy; he comes by night to ransom his son's body and kisses the hands of Achilleus.", "a": "Priam"},
+    {"q": "*Trojan.* Queen of Troy; she leads the women's offering of a robe to Athene and begs her son from the wall to come inside.", "a": "Hekabe"},
+    {"q": "*Trojan.* Infant son of Hektor, frightened by the horsehair crest on his father's helmet; his father calls him Skamandrios.", "a": "Astyanax"},
+    {"q": "*Trojan.* Son of Priam who carried off Helen; Aphrodite snatches him away from his duel with Menelaos.", "a": "Paris (Alexandros)"},
+    {"q": "*In Troy.* Daughter of Zeus and wife of Menelaos, taken from Lakedaimon; from the wall she names the Achaian leaders for Priam.", "a": "Helen"},
+    {"q": "*Trojan.* Son of Anchises and Aphrodite, leader of the Dardanians; one of the only Trojans to survive the war; Poseidon rescues him from Achilleus.", "a": "Aineias"},
+    {"q": "*Trojan.* A spy who goes out at night in a wolfskin; Odysseus and Diomedes catch and kill him.", "a": "Dolon"},
+    {"q": "*Trojan ally.* Son of Zeus and leader of the Lykians, killed by Patroklos; Sleep and Death carry his body home.", "a": "Sarpedon"}
+  ]
+}

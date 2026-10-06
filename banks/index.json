@@ -21,10 +21,31 @@
     "order": 3
   },
   {
+    "id": "iliad-achaians",
+    "title": "The Iliad: Achaians",
+    "count": 11,
+    "description": "Agamemnon, Achilleus, and the Greek host.",
+    "order": 6.1
+  },
+  {
+    "id": "iliad-trojans",
+    "title": "The Iliad: Trojans",
+    "count": 9,
+    "description": "Priam’s family, the defenders of Troy, and their allies.",
+    "order": 6.2
+  },
+  {
+    "id": "iliad-immortals",
+    "title": "The Iliad: Immortals",
+    "count": 11,
+    "description": "The gods who take sides in the war.",
+    "order": 6.3
+  },
+  {
     "id": "iliad-characters",
     "title": "The Iliad: Characters",
     "count": 31,
-    "description": "Achaians, Trojans, and immortals",
-    "order": 6
+    "description": "The ultimate test: Achaians, Trojans, and immortals together.",
+    "order": 6.4
   }
 ]

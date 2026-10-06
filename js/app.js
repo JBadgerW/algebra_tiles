@@ -104,11 +104,24 @@ const perMinute = (count, ms) => {
   return rate >= 10 ? String(Math.round(rate)) : rate.toFixed(1);
 };
 
-async function showGame(id) {
-  const bank = await fetchJSON(`${BANK_DIR}${encodeURIComponent(id)}.json`);
-  const pairs = (bank.pairs ?? []).filter(p => p?.q != null && p?.a != null)
+const loadBank = id => fetchJSON(`${BANK_DIR}${encodeURIComponent(id)}.json`);
+
+// A bank's own pairs plus those of every bank it lists in "include", so a
+// combined test can be built from its slices without copying them.
+async function collectPairs(bank, trail) {
+  const own = (bank.pairs ?? []).filter(p => p?.q != null && p?.a != null)
     .map(p => ({ q: String(p.q), a: String(p.a) }));
-  if (!pairs.length) throw new Error(`${id}.json has no "pairs" with both a "q" and an "a"`);
+  const included = await Promise.all((bank.include ?? []).map(async id => {
+    if (trail.includes(id)) throw new Error(`Banks include each other in a loop: ${[...trail, id].join(' → ')}`);
+    return collectPairs(await loadBank(id), [...trail, id]);
+  }));
+  return own.concat(...included);
+}
+
+async function showGame(id) {
+  const bank = await loadBank(id);
+  const pairs = await collectPairs(bank, [id]);
+  if (!pairs.length) throw new Error(`${id}.json has no "pairs" with both a "q" and an "a", and includes none`);
   document.title = `${bank.title} · ${TITLE}`;
 
   const easy = getMode() === 'easy';

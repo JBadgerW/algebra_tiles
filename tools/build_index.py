@@ -9,6 +9,9 @@ list a folder. Run this after adding, removing, or renaming a bank:
 Menu order: banks with an "order" number come first (lowest first),
 then the rest alphabetically by title.
 
+A bank can list other banks in "include" (e.g. a cumulative test built
+from its slices); it plays all of their pairs along with any of its own.
+
 Banks with "hidden": true are left off the menu but still play from a
 direct link (#/play/<id>). Remove the line and rerun this to list them.
 """
@@ -20,13 +23,33 @@ ROOT = Path(__file__).resolve().parent.parent
 BANKS = ROOT / "banks"
 
 
-def entry_for(path, data):
-    pairs = data["pairs"]
-    if not isinstance(pairs, list) or not pairs:
-        raise ValueError('"pairs" must be a non-empty list')
+def all_pairs(data, trail):
+    """A bank's own pairs plus those of every bank it lists in "include"."""
+    pairs = data.get("pairs", [])
+    if not isinstance(pairs, list):
+        raise ValueError('"pairs" must be a list')
     for i, pair in enumerate(pairs, 1):
         if not isinstance(pair, dict) or "q" not in pair or "a" not in pair:
             raise ValueError(f'pair {i} needs both a "q" and an "a"')
+    pairs = list(pairs)
+    for name in data.get("include", []):
+        if name in trail:
+            raise ValueError(f"banks include each other in a loop: {' -> '.join([*trail, name])}")
+        source = BANKS / f"{name}.json"
+        if not source.exists():
+            raise ValueError(f'"include" names {name}, but there is no banks/{name}.json')
+        try:
+            included = json.loads(source.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"included bank {name}.json: {exc}") from exc
+        pairs += all_pairs(included, [*trail, name])
+    return pairs
+
+
+def entry_for(path, data):
+    pairs = all_pairs(data, [path.stem])
+    if not pairs:
+        raise ValueError('needs a non-empty "pairs" list or an "include" list of other banks')
     size = data.get("roundSize", 6)
     if not isinstance(size, int) or size < 2:
         raise ValueError('"roundSize" must be a whole number, 2 or more')

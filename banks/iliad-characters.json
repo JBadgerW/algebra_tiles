@@ -1,40 +1,10 @@
 {
   "title": "The Iliad: Characters",
-  "description": "Achaians, Trojans, and immortals",
-  "order": 6,
-  "pairs": [
-    { "q": "*Achaian.* Son of Peleus and a sea-goddess, leader of the Myrmidons; his anger is the subject of the poem.", "a": "Achilleus" },
-    { "q": "*Achaian.* Son of Atreus, king of Mykenai and lord of men, commander of the whole host.", "a": "Agamemnon" },
-    { "q": "*Achaian.* Son of Atreus, king of Lakedaimon and Helen's husband; he nearly kills Paris in single combat.", "a": "Menelaos" },
-    { "q": "*Achaian.* Son of Laertes, king of Ithaka, known for his cunning; he goes on the night raid with Diomedes.", "a": "Odysseus" },
-    { "q": "*Achaian.* Son of Telamon, a huge man with a shield like a wall; he fights Hektor in a duel that ends in a draw.", "a": "Telamonian Aias" },
-    { "q": "*Achaian.* Son of Tydeus, lord of Argos; in his great day of fighting he wounds Aphrodite and Ares.", "a": "Diomedes" },
-    { "q": "*Achaian.* Aged king of Pylos, full of long advice and stories of the deeds of his youth.", "a": "Nestor" },
-    { "q": "*Achaian.* Son of Menoitios and dearest companion of Achilleus; he fights in Achilleus' armor and is killed by Hektor.", "a": "Patroklos" },
-    { "q": "*Achaian.* Achilleus' old tutor; on the embassy he tells the story of Meleagros.", "a": "Phoinix" },
-    { "q": "*Achaian.* The captive woman awarded to Achilleus and taken by Agamemnon; she mourns over Patroklos.", "a": "Briseis" },
-    { "q": "*Achaian.* Agamemnon's captive, daughter of Apollo's priest; Odysseus returns her to her father to end the plague.", "a": "Chryseis" },
-
-    { "q": "*Trojan.* Eldest son of Priam and Hekabe, husband of Andromache, the chief defender of the city.", "a": "Hektor" },
-    { "q": "*Trojan.* Aged king of Troy; he comes by night to ransom his son's body and kisses the hands of Achilleus.", "a": "Priam" },
-    { "q": "*Trojan.* Queen of Troy; she leads the women's offering of a robe to Athene and begs her son from the wall to come inside.", "a": "Hekabe" },
-    { "q": "*Trojan.* Infant son of Hektor, frightened by the horsehair crest on his father's helmet; his father calls him Skamandrios.", "a": "Astyanax" },
-    { "q": "*Trojan.* Son of Priam who carried off Helen; Aphrodite snatches him away from his duel with Menelaos.", "a": "Paris (Alexandros)" },
-    { "q": "*In Troy.* Daughter of Zeus and wife of Menelaos, taken from Lakedaimon; from the wall she names the Achaian leaders for Priam.", "a": "Helen" },
-    { "q": "*Trojan.* Son of Anchises and Aphrodite, leader of the Dardanians; one of the only Trojans to survive the war; Poseidon rescues him from Achilleus.", "a": "Aineias" },
-    { "q": "*Trojan.* A spy who goes out at night in a wolfskin; Odysseus and Diomedes catch and kill him.", "a": "Dolon" },
-    { "q": "*Trojan ally.* Son of Zeus and leader of the Lykians, killed by Patroklos; Sleep and Death carry his body home.", "a": "Sarpedon" },
-
-    { "q": "*Immortal.* Son of Kronos, father of gods and men, who grants Thetis' prayer to honor her son.", "a": "Zeus" },
-    { "q": "*Immortal.* Queen of the gods, wife and sister of Zeus, who hates Troy; she lulls her husband to sleep on Ida.", "a": "Hera" },
-    { "q": "*Immortal.* The grey-eyed daughter of Zeus, who grabs Achilleus by the hair to stop him from drawing his sword on Agamemnon.", "a": "Athene" },
-    { "q": "*Immortal.* Phoibos the archer, whose arrows bring the plague; he strikes Patroklos from behind.", "a": "Apollo" },
-    { "q": "*Immortal.* Goddess of love and mother of Aineias; Diomedes wounds her in the hand.", "a": "Aphrodite" },
-    { "q": "*Immortal.* The god of war, who fights for the Trojans; Athene knocks him down with a boundary stone.", "a": "Ares" },
-    { "q": "*Immortal.* The earth-shaker, brother of Zeus and lord of the sea, who rallies the Achaians while Zeus sleeps.", "a": "Poseidon" },
-    { "q": "*Immortal.* A sea-goddess and mother of Achilleus, who asks Zeus to give the Trojans the upper hand.", "a": "Thetis" },
-    { "q": "*Immortal.* Argeïphontes, the guide who escorts Priam through the Achaian camp at night.", "a": "Hermes" },
-    { "q": "*Immortal.* The female messenger of the gods.", "a": "Iris" },
-    { "q": "*Immortal.* The huntress, Apollo's sister; Hera boxes her ears with her own bow.", "a": "Artemis" }
+  "description": "The ultimate test: Achaians, Trojans, and immortals together.",
+  "order": 6.4,
+  "include": [
+    "iliad-achaians",
+    "iliad-trojans",
+    "iliad-immortals"
   ]
 }

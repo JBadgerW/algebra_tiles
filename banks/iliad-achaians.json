@@ -1,0 +1,18 @@
+{
+  "title": "The Iliad: Achaians",
+  "description": "Agamemnon, Achilleus, and the Greek host.",
+  "order": 6.1,
+  "pairs": [
+    {"q": "*Achaian.* Son of Peleus and a sea-goddess, leader of the Myrmidons; his anger is the subject of the poem.", "a": "Achilleus"},
+    {"q": "*Achaian.* Son of Atreus, king of Mykenai and lord of men, commander of the whole host.", "a": "Agamemnon"},
+    {"q": "*Achaian.* Son of Atreus, king of Lakedaimon and Helen's husband; he nearly kills Paris in single combat.", "a": "Menelaos"},
+    {"q": "*Achaian.* Son of Laertes, king of Ithaka, known for his cunning; he goes on the night raid with Diomedes.", "a": "Odysseus"},
+    {"q": "*Achaian.* Son of Telamon, a huge man with a shield like a wall; he fights Hektor in a duel that ends in a draw.", "a": "Telamonian Aias"},
+    {"q": "*Achaian.* Son of Tydeus, lord of Argos; in his great day of fighting he wounds Aphrodite and Ares.", "a": "Diomedes"},
+    {"q": "*Achaian.* Aged king of Pylos, full of long advice and stories of the deeds of his youth.", "a": "Nestor"},
+    {"q": "*Achaian.* Son of Menoitios and dearest companion of Achilleus; he fights in Achilleus' armor and is killed by Hektor.", "a": "Patroklos"},
+    {"q": "*Achaian.* Achilleus' old tutor; on the embassy he tells the story of Meleagros.", "a": "Phoinix"},
+    {"q": "*Achaian.* The captive woman awarded to Achilleus and taken by Agamemnon; she mourns over Patroklos.", "a": "Briseis"},
+    {"q": "*Achaian.* Agamemnon's captive, daughter of Apollo's priest; Odysseus returns her to her father to end the plague.", "a": "Chryseis"}
+  ]
+}
