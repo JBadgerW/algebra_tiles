@@ -26,9 +26,9 @@ python3 -m http.server 8000
 
 You can link students straight to a bank: `…/#/play/one-step-equations`.
 
-Math is drawn by [KaTeX](https://katex.org), loaded from cdnjs. Without internet access, math shows
-as plain TeX (e.g. `x^2`), so on an offline LAN, download KaTeX into the folder and point the two
-KaTeX lines in `index.html` at the local copy.
+Math is drawn by [KaTeX](https://katex.org) 0.16.11, bundled in `vendor/katex/` (MIT license), so
+the game works on a LAN with no internet. Only the `.woff2` fonts are included, which every current
+browser uses; `katex.min.css` was trimmed to match.
 
 ## How it plays
 
@@ -97,4 +97,5 @@ js/board.js           one round: shuffling, dragging, keyboard moves, scoring, w
 js/util.js            shared helpers (math/text rendering, shuffles)
 banks/                question bank JSON files and index.json
 tools/build_index.py  rebuilds banks/index.json and checks the banks
+vendor/katex/         KaTeX math rendering (JS, CSS, woff2 fonts, license)
 ```
