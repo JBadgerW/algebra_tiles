@@ -30,6 +30,10 @@ Math is drawn by [KaTeX](https://katex.org) 0.16.11, bundled in `vendor/katex/` 
 the game works on a LAN with no internet. Only the `.woff2` fonts are included, which every current
 browser uses; `katex.min.css` was trimmed to match.
 
+The tiles are set in TeX Gyre Heros, a free Helvetica clone (GUST Font License), bundled in
+`vendor/texgyreheros/` so they look the same on every device. The fonts were converted from the
+TeX Gyre `.otf` files to `.woff2` with no glyphs changed.
+
 ## How it plays
 
 - **Rounds:** each round deals up to 6 random pairs from the bank (or the bank's `roundSize`). Every
@@ -101,4 +105,5 @@ js/util.js            shared helpers (math/text rendering, shuffles)
 banks/                question bank JSON files and index.json
 tools/build_index.py  rebuilds banks/index.json and checks the banks
 vendor/katex/         KaTeX math rendering (JS, CSS, woff2 fonts, license)
+vendor/texgyreheros/  TeX Gyre Heros, the Helvetica-style tile font (woff2, license)
 ```
