@@ -1,0 +1,19 @@
+{
+  "title": "The Bacchae: Characters",
+  "description": "The cast of Euripedes's _Bacchae_",
+  "order": 6.1,
+  "pairs": [
+    {"q": "mother of Pentheus; daughter of Cadmus; sister of Autonoe, Ino, and Semele; leader of the Theban Bacchae; not on stage until 1168", "a":"Agave"},
+    {"q": "frenzied female worshippers of Dionysus; also called 'maenads'", "a":"Bacchae"},
+    {"q": "aged former king of Thebes; father of Agave, Autonoe, and Semele; he has abdicated in favor of his grandson", "a":"Cadmus"},
+    {"q": "Fifteen Bacchae from Lydia; also called 'maenads' (mad-women); who provide commentary and plot information on the play", "a":"the Chorus"},
+    {"q": "son of the immortal Zeus and the mortal Semele; first cousin of Pentheus; appears both as a god and as a human, ie. as the disguised Lydian 'Stranger'", "a":"Dionysus"},
+    {"q": "one of Pentheus' guards who describes how the Stranger was captured near Cithaeron and how the jailed Bacchae miraculously escaped to the mountain", "a":"Messenger #1"},
+    {"q": "a herdsman from Thebes who describes the oracles of the Theban Bacchae on Mt. Cithaeron", "a":"Messenger #2"},
+    {"q": "son of Agave and Echion; first cousin of Dionysus; successor to his grandfather Cadmus as king of Thebes; probably 18-20 years old", "a":"Pentheus"},
+    {"q": "Dionysus' mother", "a":"Semele"},
+    {"q": "the blind old prophet of Thebes and friend of Cadmus", "a":"Tiresias"}
+  ]
+}
+
+

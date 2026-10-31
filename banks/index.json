@@ -54,5 +54,13 @@
     "description": "The ultimate test: Achaians, Trojans, and immortals together.",
     "order": 6.4,
     "visible": true
+  },
+  {
+    "id": "bacchae-characters",
+    "title": "The Bacchae: Characters",
+    "count": 31,
+    "description": "The cast of Euripedes's _Bacchae_.",
+    "order": 6.4,
+    "visible": true
   }
 ]
