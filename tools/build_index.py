@@ -64,7 +64,6 @@ def entry_for(path, data):
     entry = {
         "id": path.stem,
         "title": data.get("title", path.stem),
-        "count": len(pairs),
     }
     if data.get("description"):
         entry["description"] = data["description"]

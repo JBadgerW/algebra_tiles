@@ -59,16 +59,16 @@ function modeToggle() {
   );
 }
 
-function bankCard(b) {
+function bankCard(b, count) {
   return el('a', { class: 'card', href: `#/play/${encodeURIComponent(b.id)}` },
     el('div', { class: 'card-art' },
       el('div', { class: 'art-count-box' },
-        el('span', { class: 'art-count' }, String(b.count)),
+        el('span', { class: 'art-count' }, String(count)),
         el('span', { class: 'art-label' }, 'pairs'))),
     el('div', { class: 'card-text' },
       el('h2', {}, b.title),
       b.description && el('p', {}, b.description),
-      el('span', { class: 'card-meta' }, `${b.count} questions`),
+      el('span', { class: 'card-meta' }, `${count} questions`),
     ),
   );
 }
@@ -76,6 +76,10 @@ function bankCard(b) {
 async function showMenu() {
   document.title = TITLE;
   const banks = (await loadIndex()).filter(b => b.visible !== false);
+  // Count each bank's pairs (its own plus any it includes) from the bank itself.
+  const counts = await Promise.all(banks.map(b =>
+    loadBank(b.id).then(bank => collectPairs(bank, [b.id])).then(p => p.length)
+      .catch(err => { console.error(`${b.id}.json:`, err); return '?'; })));
   show(el('main', { class: 'screen menu' },
     el('header', { class: 'menu-head' },
       el('div', {},
@@ -85,7 +89,7 @@ async function showMenu() {
       modeToggle(),
     ),
     banks.length
-      ? el('div', { class: 'cards' }, banks.map(bankCard))
+      ? el('div', { class: 'cards' }, banks.map((b, i) => bankCard(b, counts[i])))
       : el('p', {}, 'No question banks yet. Add one to the banks folder and run tools/build_index.py.'),
   ));
 }
@@ -104,7 +108,16 @@ const perMinute = (count, ms) => {
   return rate >= 10 ? String(Math.round(rate)) : rate.toFixed(1);
 };
 
-const loadBank = id => fetchJSON(`${BANK_DIR}${encodeURIComponent(id)}.json`);
+// Cached, since the menu loads every bank to count its pairs, and a combined
+// bank loads its slices again through "include".
+const bankCache = new Map();
+const loadBank = id => {
+  if (!bankCache.has(id)) {
+    bankCache.set(id, fetchJSON(`${BANK_DIR}${encodeURIComponent(id)}.json`)
+      .catch(err => { bankCache.delete(id); throw err; }));
+  }
+  return bankCache.get(id);
+};
 
 // A bank's own pairs plus those of every bank it lists in "include", so a
 // combined test can be built from its slices without copying them.
